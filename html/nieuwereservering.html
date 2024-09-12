@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Reservation</title>
+    <link rel="stylesheet" href="../css/nieuwereservering.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="tafel.html">Tables</a></li>
+            <li><a href="reservering.html">Reservations</a></li>
+            <li><a href="nieuwereservering.html">New Reservation</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Add a New Reservation</h2>
+        <form id="reservation-form">
+            <label for="table-id">Table Number:</label>
+            <input type="number" id="table-id" name="table_id" required>
+
+            <label for="reservation-time">Reservation Time:</label>
+            <input type="time" id="reservation-time" name="reservation_time" required>
+
+            <label for="customer-name">Customer Name:</label>
+            <input type="text" id="customer-name" name="customer_name" required>
+
+            <button type="submit">Add Reservation</button>
+        </form>
+    </div>
+
+    <script src="../js/nieuwereservering.js"></script>
+</body>
+</html>

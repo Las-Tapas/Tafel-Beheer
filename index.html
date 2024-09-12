@@ -9,6 +9,7 @@
 <body>
     <nav class="navbar">
         <ul>
+            <li><a href="index.html">Dashboard</a></li>
             <li><a href="./html/tafel.html">Tables</a></li>
             <li><a href="./html/reservering.html">Reservations</a></li>
             <li><a href="./html/nieuwereservering.html">New Reservation</a></li>
@@ -24,22 +25,6 @@
         <section id="reservations" class="section">
             <h2>Reservations</h2>
             <div id="reservations-list" class="reservations-list"></div>
-        </section>
-
-        <section id="new-reservation" class="section">
-            <h2>New Reservation</h2>
-            <form id="reservation-form">
-                <label for="table-id">Table Number:</label>
-                <input type="number" id="table-id" name="table_id" required>
-
-                <label for="reservation-time">Reservation Time:</label>
-                <input type="time" id="reservation-time" name="reservation_time" required>
-
-                <label for="customer-name">Customer Name:</label>
-                <input type="text" id="customer-name" name="customer_name" required>
-
-                <button type="submit">Add Reservation</button>
-            </form>
         </section>
     </div>
 
