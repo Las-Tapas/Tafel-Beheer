@@ -4,7 +4,7 @@ $username = "smul";
 $password = "smul";
 $database = "restaurant_db";
 
-// Maak verbinding met de database
+// Maak verbinding 
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Controleer de verbinding
