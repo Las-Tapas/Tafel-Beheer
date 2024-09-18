@@ -9,29 +9,36 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./html/tafel.html">tafels</a></li>
-            <li><a href="./html/reservering.html">Reserveringen</a></li>
-            <li><a href="./html/nieuwereservering.html">Nieuwe reservering</a></li>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="tafel.html">Tafels</a></li>
+            <li><a href="reservering.html">Reserveringen</a></li>
+            <li><a href="nieuwereservering.html">Nieuwe Reservering</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h2>Add a New Reservation</h2>
-        <form id="reservation-form">
-            <label for="table-id">Table Number:</label>
-            <input type="number" id="table-id" name="table_id" required>
+        <section id="new-reservation" class="section">
+            <h2>Nieuwe Reservering</h2>
+            <form id="reservation-form" action="../php/opslaan_reservering.php" method="POST">
+                <label for="customer-name">Naam:</label>
+                <input type="text" id="customer-name" name="customer_name" required>
 
-            <label for="reservation-time">Reservation Time:</label>
-            <input type="time" id="reservation-time" name="reservation_time" required>
+                <label for="contact-info">Contactgegevens:</label>
+                <input type="text" id="contact-info" name="contact_info" required>
 
-            <label for="customer-name">Customer Name:</label>
-            <input type="text" id="customer-name" name="customer_name" required>
+                <label for="people-number">Aantal Personen:</label>
+                <input type="number" id="people-number" name="people_number" required>
 
-            <button type="submit">Add Reservation</button>
-        </form>
+                <label for="table-id">Tafelnummer:</label>
+                <input type="number" id="table-id" name="table_id" required>
+
+                <label for="reservation-time">Reserveringstijd:</label>
+                <input type="time" id="reservation-time" name="reservation_time" required>
+
+                <button type="submit">Reservering Toevoegen</button>
+            </form>
+        </section>
     </div>
 
-    <script src="../js/nieuwereservering.js"></script>
 </body>
 </html>

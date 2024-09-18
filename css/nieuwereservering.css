@@ -3,15 +3,20 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f6d6ad; /* Een warme achtergrondkleur die de sfeer van La Cubanita weergeeft */
+    background-color: #424242; 
     color: #333;
 }
 
-/* Navbar stijlen */
+/* Navbar-stijlen */
 .navbar {
-    background-color: #e74c3c; /* Helder rood, passend bij de levendige kleuren van La Cubanita */
-    padding: 15px;
-    text-align: center;
+    background-color: #000000; 
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -19,23 +24,24 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
 .navbar ul li {
-    margin: 0 20px;
+    display: inline;
 }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    text-decoration: underline;
-    color: #f4d03f; /* Een gele kleur voor de hover om extra flair toe te voegen */
+    color: #424242; 
 }
 
 /* Stijlen voor de container en secties */
@@ -56,9 +62,9 @@ body {
 }
 
 h2 {
-    color: #c0392b; /* Diep rood voor titels */
+    color: #000000; 
     font-size: 26px;
-    font-family: 'Georgia', serif; /* Geef titels een meer sierlijk lettertype */
+    font-family: 'Arial', serif; 
     margin-bottom: 15px;
 }
 
@@ -67,19 +73,19 @@ label {
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
-    color: #e74c3c;
+    color: #000000;
 }
 
 input, select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #e74c3c;
+    border: 2px solid #000000;
     border-radius: 8px;
 }
 
 button {
-    background-color: #f39c12;
+    background-color: #000000;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -89,7 +95,7 @@ button {
 }
 
 button:hover {
-    background-color: #e67e22; /* Lichtere oranje hover-effect voor knoppen */
+    background-color: #000000; /* Lichtere oranje hover-effect voor knoppen */
 }
 
 /* Floorplan styling */
@@ -126,7 +132,7 @@ button:hover {
     margin-bottom: 15px;
     padding: 10px;
     background-color: white;
-    border-left: 5px solid #e67e22;
+    border-left: 5px solid #000000;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

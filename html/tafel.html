@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Overview</title>
+    <title>Restaurant Table Management</title>
     <link rel="stylesheet" href="../css/tafel.css">
 </head>
 <body>
+
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./html/tafel.html">tafels</a></li>
-            <li><a href="./html/reservering.html">Reserveringen</a></li>
-            <li><a href="./html/nieuwereservering.html">Nieuwe reservering</a></li>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="tafel.html">Tafels</a></li>
+            <li><a href="reservering.html">Reserveringen</a></li>
+            <li><a href="nieuwereservering.html">Nieuwe Reservering</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h2>Table Floor Plan</h2>
-        <div id="table-floorplan" class="floorplan"></div>
+        <section id="tables" class="section">
+            <h2>Tables</h2>
+            <div id="table-floorplan" class="floorplan"></div>
+        </section>
     </div>
 
-    <script src="../js/tafel.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

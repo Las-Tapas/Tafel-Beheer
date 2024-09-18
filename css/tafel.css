@@ -3,15 +3,20 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f6d6ad; /* Een warme achtergrondkleur die de sfeer van La Cubanita weergeeft */
+    background-color: #424242; /* Lichtgekleurde achtergrond */
     color: #333;
 }
 
-/* Navbar stijlen */
+/* Navbar-stijlen */
 .navbar {
-    background-color: #e74c3c; /* Helder rood, passend bij de levendige kleuren van La Cubanita */
-    padding: 15px;
-    text-align: center;
+    background-color: #000000; 
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -19,114 +24,119 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
 .navbar ul li {
-    margin: 0 20px;
+    display: inline;
 }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    text-decoration: underline;
-    color: #f4d03f; /* Een gele kleur voor de hover om extra flair toe te voegen */
+    color: #424242; 
 }
 
-/* Stijlen voor de container en secties */
-.container {
-    margin-top: 100px;
+#table-floorplan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
     padding: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 20px;
+    margin: 20px;
+    margin-top: 80px; 
 }
 
-h2 {
-    color: #c0392b; /* Diep rood voor titels */
-    font-size: 26px;
-    font-family: 'Georgia', serif; /* Geef titels een meer sierlijk lettertype */
-    margin-bottom: 15px;
-}
-
-/* Formulier styling */
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #e74c3c;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #e74c3c;
+#table-floorplan div {
+    background-color: #2ecc71; 
     border-radius: 8px;
-}
-
-button {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e67e22; /* Lichtere oranje hover-effect voor knoppen */
-}
-
-/* Floorplan styling */
-.floorplan {
+    height: 100px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.table {
-    width: 150px;
-    height: 150px;
-    background-color: #2ecc71; /* Groene kleur voor beschikbare tafels */
-    color: white;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
     font-size: 18px;
-    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-.table.reserved {
-    background-color: #e74c3c; /* Rode kleur voor gereserveerde tafels */
+/* Status kleuren voor tafels */
+#table-floorplan div.reserved {
+    background-color: #e67e22; 
 }
 
-/* Reserveringslijst */
-.reservations-list {
-    background-color: #f4d03f;
-    padding: 20px;
-    border-radius: 10px;
+#table-floorplan div.occupied {
+    background-color: #c0392b; 
 }
 
-.reservation-item {
-    margin-bottom: 15px;
+/* Tooltip stijlen */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
     padding: 10px;
-    background-color: white;
-    border-left: 5px solid #e67e22;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    transition: opacity 0.3s ease;
+    bottom: 120%; 
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+#table-floorplan div:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#table-floorplan div:hover {
+    opacity: 0.8;
+}
+
+#table-floorplan div::after {
+    content: attr(data-number);
+    position: absolute;
+    bottom: 10px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    #table-floorplan {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    #table-floorplan div {
+        height: 80px;
+        font-size: 16px;
+    }
 }
