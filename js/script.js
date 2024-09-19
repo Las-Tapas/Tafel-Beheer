@@ -1,64 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tableFloorplan = document.getElementById('table-floorplan');
-    const reservationsList = document.getElementById('reservations-list');
-    const reservationForm = document.getElementById('reservation-form');
+// Function to populate table numbers in the form
+async function populateTableNumbers() {
+    try {
+        const response = await fetch('./api/get_tafels.php');
+        const tafels = await response.json();
+        const tableSelect = document.getElementById('table-number');
 
-    function renderTables() {
-        // Voorbeeld data, zou normaal uit een API komen
-        const tables = [
-            { id: 1, name: 'Table 1', reservations: ['12:00', '13:00'] },
-            { id: 2, name: 'Table 2', reservations: ['12:30', '14:00'] },
-            // meer tafels
-        ];
-
-        tableFloorplan.innerHTML = tables.map(table => `
-            <div class="table-item">
-                <h4>${table.name}</h4>
-                <div class="hover-menu">
-                    <h5>Upcoming Reservations:</h5>
-                    <ul>
-                        ${table.reservations.map(res => `<li>${res}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-        `).join('');
+        tafels.forEach(table => {
+            const option = document.createElement('option');
+            option.value = table.tafel_nummer;
+            option.textContent = `Table ${table.tafel_nummer}`;
+            tableSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error fetching tables:', error);
     }
+}
 
-    function handleFormSubmit(event) {
-        event.preventDefault();
+// Function to handle form submission
+document.getElementById('reservation-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-        const formData = new FormData(reservationForm);
-        fetch('./reserve.php', {
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('./api/add_reservation.php', {
             method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(result => {
-            console.log(result);
-            // Update de UI
-            renderTables();
-            renderReservations();
-        })
-        .catch(error => console.error('Error:', error));
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert('Reservation added successfully');
+        } else {
+            alert('Error adding reservation');
+        }
+    } catch (error) {
+        console.error('Error adding reservation:', error);
     }
-
-    reservationForm.addEventListener('submit', handleFormSubmit);
-
-    function renderReservations() {
-        fetch('./get_reservations.php')
-        .then(response => response.json())
-        .then(data => {
-            reservationsList.innerHTML = data.map(reservation => `
-                <div class="reservation-item">
-                    <p>Table ${reservation.table_id}</p>
-                    <p>Time: ${reservation.reservation_time}</p>
-                    <p>Customer: ${reservation.customer_name}</p>
-                </div>
-            `).join('');
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    renderTables();
-    renderReservations();
 });
+
+populateTableNumbers();

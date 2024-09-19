@@ -1,138 +1,285 @@
-/* Algemene body-instellingen */
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #424242; /* Een warme achtergrondkleur die de sfeer van La Cubanita weergeeft */
-    color: #333;
-}
-
-/* Navbar-stijlen */
-.navbar {
-    background-color: #000000; /* Diep rood voor La Cubanita-stijl */
-    padding: 15px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     box-sizing: border-box;
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
 }
 
-.navbar ul li {
-    display: inline;
+.sidebar {
+    width: 250px;
+    background-color: #004225;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.navbar ul li a {
+.sidebar h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    color: #424242; /* Oranje kleur bij hover */
-}
-
-/* Stijlen voor de container en secties */
-.container {
-    margin-top: 100px;
-    padding: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #424242; /* Diep rood voor titels */
-    font-size: 26px;
-    font-family: 'arial', serif; 
-    margin-bottom: 15px;
-}
-
-/* Formulier styling */
-label {
+    font-size: 1.1em;
     display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #e74c3c;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #e74c3c;
+    padding: 10px 15px;
     border-radius: 8px;
+    transition: background 0.3s ease;
 }
 
-button {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+.sidebar ul li a:hover {
+    background-color: #066038;
 }
 
-button:hover {
-    background-color: #e67e22; /* Lichtere oranje hover-effect voor knoppen */
-}
-
-/* Floorplan styling */
-.floorplan {
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f2f5;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
 }
 
-.table {
-    width: 150px;
-    height: 150px;
-    background-color: #2ecc71; /* Groene kleur voor beschikbare tafels */
-    color: white;
+.top-cards {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 50%;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.table.reserved {
-    background-color: #e74c3c; /* Rode kleur voor gereserveerde tafels */
-}
-
-/* Reserveringslijst */
-.reservations-list {
-    background-color: #f4d03f;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.reservation-item {
-    margin-bottom: 15px;
-    padding: 10px;
+.card {
     background-color: white;
-    border-left: 5px solid #e67e22;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.details-section {
+    display: flex;
+    gap: 20px;
+}
+
+.latest-reservations, .available-tables {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.latest-reservations h3, .available-tables h3 {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1em;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservations-table thead {
+    background-color: #004225;
+    color: white;
+}
+
+.reservations-table th,
+.reservations-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.reservations-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.reservations-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.confirmed {
+    background-color: #28a745;
+    color: white;
+}
+
+.status.pending {
+    background-color: #ffc107;
+    color: white;
+}
+
+.available-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tables-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.table {
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 10px 15px;
     border-radius: 8px;
+    text-align: center;
+    width: 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.table p {
+    margin: 0;
+}
+
+.table[data-status="available"] {
+    background-color: #28a745;
+    color: white;
+}
+
+.table[data-status="reserved"] {
+    background-color: #ffc107;
+    color: white;
+}
+
+.table[data-status="in-use"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+.available-tables button {
+    background-color: #004225;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.available-tables button:hover {
+    background-color: #066038;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-cards {
+        flex-direction: column;
+    }
+
+    .details-section {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* New Reservation Page Styles */
+.new-reservation-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.new-reservation-container h3 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.new-reservation-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.new-reservation-container label {
+    font-weight: 500;
+}
+
+.new-reservation-container input, 
+.new-reservation-container select, 
+.new-reservation-container button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.new-reservation-container input[type="text"], 
+.new-reservation-container input[type="number"],
+.new-reservation-container input[type="date"],
+.new-reservation-container input[type="time"] {
+    font-size: 1em;
+}
+
+.new-reservation-container select {
+    font-size: 1em;
+    background-color: #fff;
+}
+
+.new-reservation-container button {
+    background-color: #004225;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.new-reservation-container button:hover {
+    background-color: #066038;
+}
+
+
