@@ -64,13 +64,13 @@ body {
 h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    color: #ffcc00; /* Accentkleur voor koppen */
+    color: #ffffff; /* Accentkleur voor koppen */
 }
 
 h3 {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #ffcc00; /* Accentkleur voor subkoppen */
+    color: #ffffff; /* Accentkleur voor subkoppen */
 }
 
 form {
