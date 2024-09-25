@@ -1,9 +1,13 @@
-<?php 
-	
+<?php
+	//Start Session
 	session_start();
-	
+
+	//Unset variables of session
+	session_unset();
+
+	//Destroy Session
 	session_destroy();
 	
-	header("location: index.php");
-	
+	header('Location: index.php');
+	exit();
 ?>
