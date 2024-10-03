@@ -215,7 +215,7 @@
                 $con->beginTransaction();
                 try
                 {
-                    $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant_website' AND TABLE_NAME = 'clients'");
+                    $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant' AND TABLE_NAME = 'clients'");
             
                     $stmtgetCurrentClientID->execute();
                     $client_id = $stmtgetCurrentClientID->fetch();
@@ -224,7 +224,7 @@
                                 values(?,?,?)");
                     $stmtClient->execute(array($client_full_name,$client_phone_number,$client_email));
 
-                    $stmtgetCurrentOrderID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant_website' AND TABLE_NAME = 'placed_orders'");
+                    $stmtgetCurrentOrderID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant' AND TABLE_NAME = 'placed_orders'");
             
                     $stmtgetCurrentOrderID->execute();
                     $order_id = $stmtgetCurrentOrderID->fetch();
@@ -411,25 +411,18 @@
                         <p>
                             Our Restaurnt is one of the bests, provide tasty Menus and Dishes. You can reserve a table or Order food.
                         </p>
-                        <ul class="widget_social">
-                            <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fab fa-google-plus-g fa-2x"></i></a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                      <div class="footer_widget">
                         <h3>Headquarters</h3>
                         <p>
-                            962 Fifth Avenue, 3rd Floor New York, NY10022
+                            Bredeweg 235, Roermond
                         </p>
                         <p>
-                            contact@restaurant.com
+                            Las.Tapas@gmail.com
                             <br>
-                            (+123) 456 789 101    
+                            088866777555      
                         </p>
                      </div>
                 </div>
@@ -439,10 +432,10 @@
                             Opening Hours
                         </h3>
                         <ul class="opening_time">
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
+                            <li>Monday - Friday 11:30am - 12:00pm</li>
+                            <li>Monday - Friday 11:30am - 12:00pm</li>
+                            <li>Monday - Friday 11:30am - 12:00pm</li>
+                            <li>Monday - Friday 11:30am - 12:00pm</li>
                         </ul>
                     </div>
                 </div>

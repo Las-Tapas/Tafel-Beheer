@@ -108,7 +108,7 @@
                 $con->beginTransaction();
                 try
                 {
-                    $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant_website' AND TABLE_NAME = 'clients'");
+                    $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant' AND TABLE_NAME = 'clients'");
             
                     $stmtgetCurrentClientID->execute();
                     $client_id = $stmtgetCurrentClientID->fetch();
