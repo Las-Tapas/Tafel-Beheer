@@ -1,5 +1,3 @@
-<!-- PHP INCLUDES -->
-
 <?php
 
     include "connect.php";
@@ -8,7 +6,7 @@
     include "Includes/templates/navbar.php";
 
 
-    //Getting website settings
+    //Get website settings
 
     $stmt_web_settings = $con->prepare("SELECT * FROM website_settings");
     $stmt_web_settings->execute();
@@ -59,16 +57,6 @@
 						<p>
 							Tapas 
 						</p>
-						<div style="display: flex;">
-							<a href="order_food.php" target="_blank" class="bttn_style_1" style="margin-right: 10px; display: flex;justify-content: center;align-items: center;">
-								Order Now
-								<i class="fas fa-angle-right"></i>
-							</a>
-							<a href="#menus" class="bttn_style_2" style="display: flex;justify-content: center;align-items: center;">
-								VIEW MENU
-								<i class="fas fa-angle-right"></i>
-							</a>
-						</div>
 					</div>
 				</div>
 				
