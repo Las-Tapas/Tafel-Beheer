@@ -182,7 +182,7 @@
                     <div class="footer_widget">
                         <img src="Design/images/restaurant-logo.png" alt="Restaurant Logo" style="width: 150px;margin-bottom: 20px;">
                         <p>
-                            Our Restaurnt is one of the bests, provide tasty Menus and Dishes. You can reserve a table or Order food.
+                            Nice Tapas
                         </p>
                     </div>
                 </div>
