@@ -41,7 +41,8 @@
                                 </div>
                             </div>
                             <div class="panel-body-X">
-                            <?php
+                           
+						   <?php
                             	foreach ($options as $option)
 		                        {
 		                            ?>
@@ -50,7 +51,8 @@
 		                                	<?php echo $option['option_name'] ?>
 		                                </label>
 		                                <input type="text" value="<?php echo (isset($_POST[$option['option_name'] ]))?$_POST[$option['option_name'] ]:$option['option_value'] ?>" name="<?php echo $option['option_name'] ?>" class="form-control">
-		                                <?php
+		                                
+										<?php
 			                                if(isset($_POST['save_settings']) && $_SERVER['REQUEST_METHOD'] == 'POST')
 			                                {
 			                                    if(empty($_POST[$option['option_name']]))
@@ -63,7 +65,8 @@
 			                                }
 		                            	?>
 		                            </div>
-		                            <?php
+		                            
+									<?php
 		                        }
 		                    ?>
                             </div>

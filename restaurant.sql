@@ -6,7 +6,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clients` (
   `client_id` int(5) NOT NULL,
-  `client_name` varchar(5.
+  `client_name` varchar(5).
+  `client_name` varchar(50) NOT NULL,
+  `client_phone` varchar(50) NOT NULL,
+  `client_email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -72,8 +76,10 @@ CREATE TABLE `menus` (
 INSERT INTO `menus` (`menu_id`, `menu_name`, `menu_description`, `menu_price`, `menu_image`, `category_id`) VALUES
 (1, 'Moroccan Couscous', '.', 14.00, '88737_couscous_meat.jpg', 8),
 (2, 'Beef Hamburger', '.', 3.80, 'burger.jpeg', 1),
-(3, 'Ice Cream', ..', 7.50, 'summer-dessert-sweet-ice-cream.jpg', 2),
-(5, 'Coffee', ..', 10.00, 'coffee.jpeg', 3),
+(3, 'Ice Cream','.', 7.50, 'summer-dessert-sweet-ice-cream.jpg', 2),
+(2, 'Beef Hamburger','.', 3.80, 'burger.jpeg', 1),
+(3, 'Ice Cream', '.', 7.50, 'summer-dessert-sweet-ice-cream.jpg', 2),
+(5, 'Coffee', '.', 10.00, 'coffee.jpeg', 3),
 (6, 'Ice Tea', '.', 3.20, '76643_ice_tea.jpg', 3),
 (7, 'Bucatini', '.', 20.00, 'macaroni.jpeg', 4),
 (8, 'Cannelloni', '.', 10.00, 'cooked_pasta.jpeg', 4),
@@ -118,17 +124,6 @@ CREATE TABLE `placed_orders` (
   `canceled` tinyint(1) NOT NULL DEFAULT 0,
   `cancellation_reason` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- Dumping data for table `placed_orders`
-
-
-INSERT INTO `placed_orders` (`order_id`, `order_time`, `client_id`, `delivery_address`, `delivered`, `canceled`, `cancellation_reason`) VALUES
-(7, '2020-06-22 12:01:00', 9, 'Bloc A Nr 80000 Hay ElAgadir', 0, 1, 'Sorry! I changed my mind!'),
-(8, '2020-06-23 06:07:00', 10, 'Chengdu, China', 0, 1, ''),
-(9, '2020-06-24 16:40:00', 11, 'Hay El Houda Agadir', 1, 0, NULL),
-(10, '2023-07-01 04:02:00', 16, 'Bloc A', 0, 0, NULL),
-(11, '2023-10-30 20:09:00', 18, 'Test testst asds', 0, 0, NULL),
-(12, '2023-10-30 21:46:00', 19, 'tests sd', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
