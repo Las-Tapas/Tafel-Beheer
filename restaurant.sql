@@ -6,23 +6,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clients` (
   `client_id` int(5) NOT NULL,
-  `client_name` varchar(50) NOT NULL,
-  `client_phone` varchar(50) NOT NULL,
-  `client_email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- Dumping data for table `clients`
-
-INSERT INTO `clients` (`client_id`, `client_name`, `client_phone`, `client_email`) VALUES
-(9, 'Clinet 1', '02020202020', 'client1@gmail.com'),
-(10, 'Client 10', '0638383933', 'client10@gmail.com'),
-(11, 'Client 11', '06242556272', 'client11@yahoo.fr'),
-(13, 'Client 12', '030303030202', 'client1133@gmail.com'),
-(14, 'Client 12', '030303030', 'client14@gmail.com'),
-(16, 'Client 14', '0203203203', 'client14@gmail.com'),
-(17, 'Client 17', '0737373822', 'client17@gmail.com'),
-(18, 'Client 12', '02920320', 'client12@yahoo.fr'),
-(19, 'Test', '1034304300', 'test@gmail.com');
+  `client_name` varchar(5.
 
 -- --------------------------------------------------------
 
@@ -86,17 +70,17 @@ CREATE TABLE `menus` (
 
 
 INSERT INTO `menus` (`menu_id`, `menu_name`, `menu_description`, `menu_price`, `menu_image`, `category_id`) VALUES
-(1, 'Moroccan Couscous', 'Moroccan couscous is a traditional dish consisting of fluffy semolina grains steamed to perfection, accompanied by a rich and aromatic stew of tender meat, vegetables, &amp; fragrant spices.', 14.00, '88737_couscous_meat.jpg', 8),
-(2, 'Beef Hamburger', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 3.80, 'burger.jpeg', 1),
-(3, 'Ice Cream', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 7.50, 'summer-dessert-sweet-ice-cream.jpg', 2),
-(5, 'Coffee', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 10.00, 'coffee.jpeg', 3),
-(6, 'Ice Tea', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 3.20, '76643_ice_tea.jpg', 3),
-(7, 'Bucatini', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 20.00, 'macaroni.jpeg', 4),
-(8, 'Cannelloni', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 10.00, 'cooked_pasta.jpeg', 4),
-(9, 'Margherita', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 24.00, 'pizza.jpeg', 5),
-(11, 'Moroccan Tajine', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 20.00, '58146_Moroccan Chicken Tagine.jpeg', 8),
-(12, 'Moroccan Bissara', 'Bissara is a traditional Moroccan dish made from dried split fava beans (also known as broad beans) that are cooked and blended into a smooth and flavorful soup.', 10.00, '61959_Bissara.jpg', 8),
-(16, 'Couscous', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, lectus et mollis ultricies, justo arcu dignissim enim, eu eleifend lectus nulla.', 20.00, '76635_57738_w1024h768c1cx256cy192.jpg', 8);
+(1, 'Moroccan Couscous', '.', 14.00, '88737_couscous_meat.jpg', 8),
+(2, 'Beef Hamburger', '.', 3.80, 'burger.jpeg', 1),
+(3, 'Ice Cream', ..', 7.50, 'summer-dessert-sweet-ice-cream.jpg', 2),
+(5, 'Coffee', ..', 10.00, 'coffee.jpeg', 3),
+(6, 'Ice Tea', '.', 3.20, '76643_ice_tea.jpg', 3),
+(7, 'Bucatini', '.', 20.00, 'macaroni.jpeg', 4),
+(8, 'Cannelloni', '.', 10.00, 'cooked_pasta.jpeg', 4),
+(9, 'Margherita', '.', 24.00, 'pizza.jpeg', 5),
+(11, 'Moroccan Tajine', '.', 20.00, '58146_Moroccan Chicken Tagine.jpeg', 8),
+(12, 'Moroccan Bissara', '.', 10.00, '61959_Bissara.jpg', 8),
+(16, 'Couscous', '.', 20.00, '76635_57738_w1024h768c1cx256cy192.jpg', 8);
 
 -- --------------------------------------------------------
 
@@ -163,15 +147,6 @@ CREATE TABLE `reservations` (
   `cancellation_reason` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table `reservations`
-
-
-INSERT INTO `reservations` (`reservation_id`, `date_created`, `client_id`, `selected_time`, `nbr_guests`, `table_id`, `liberated`, `canceled`, `cancellation_reason`) VALUES
-(1, '2020-07-18 09:07:00', 13, '2020-07-30 09:07:00', 0, 1, 0, 0, NULL),
-(2, '2020-07-18 09:11:00', 14, '2020-07-29 13:00:00', 4, 1, 0, 0, NULL),
-(3, '2023-07-01 04:01:00', 15, '2023-07-02 05:00:00', 2, 1, 0, 0, NULL),
-(4, '2023-10-30 20:03:00', 17, '2023-11-08 20:03:00', 1, 1, 0, 0, NULL);
-
 -- --------------------------------------------------------
 
 -- Table structure for table `tables`
@@ -186,6 +161,9 @@ CREATE TABLE `tables` (
 
 INSERT INTO `tables` (`table_id`) VALUES
 (1);
+(2);
+(3);
+(4);
 
 -- --------------------------------------------------------
 
@@ -201,6 +179,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table `users`
+
+-- admin_user -- 123456789
 
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `full_name`, `password`) VALUES
