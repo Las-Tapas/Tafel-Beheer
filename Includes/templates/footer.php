@@ -10,14 +10,7 @@
 							</script>
 							Las Tapas
 						</div>
-					</div>
-					<div class="col-md-6 xs-padding">
-						<ul class="footer_social">
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Report Problem</a></li>
-						</ul>
-					</div>
+					</div>	
 				</div>
 			</div>
 		</footer>
@@ -31,9 +24,4 @@
 		<script src="Design/js/main.js"></script>
 
 	</body>
-
-	<!-- END BODY TAG -->
-
 </html>
-
-<!-- END HTML TAG -->

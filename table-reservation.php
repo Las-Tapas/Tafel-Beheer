@@ -305,22 +305,6 @@
             <div class="col-md-3 details_card">
                 <span>30</span>
                 <div>
-                    Total 
-                    <br>
-                    Reservations
-                </div>
-            </div>
-            <div class="col-md-3 details_card">
-                <span>30</span>
-                <div>
-                    Total 
-                    <br>
-                    Menus
-                </div>
-            </div>
-            <div class="col-md-3 details_card">
-                <span>30</span>
-                <div>
                     Years of 
                     <br>
                     Experience
