@@ -24,12 +24,6 @@
                                     Edit Profile
                                 </span>
                             </a>
-                            <a class="dropdown-item" href="website-settings.php">
-                                <i class="fas fa-cogs"></i>
-                                <span style="padding-left:6px">
-                                    Website Settings
-                                </span>
-                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout.php">
                                 <i class="fas fa-sign-out-alt"></i>
