@@ -6,7 +6,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clients` (
   `client_id` int(5) NOT NULL,
-  `client_name` varchar(5).
   `client_name` varchar(50) NOT NULL,
   `client_phone` varchar(50) NOT NULL,
   `client_email` varchar(100) NOT NULL
@@ -156,9 +155,6 @@ CREATE TABLE `tables` (
 
 INSERT INTO `tables` (`table_id`) VALUES
 (1);
-(2);
-(3);
-(4);
 
 -- --------------------------------------------------------
 
