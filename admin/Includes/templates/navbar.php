@@ -96,7 +96,13 @@
                 </div>
                 
                 <div class="dropdown-divider"></div>
-                
+
+                <li>
+                    <a href="tables.php" class="a-verMenu tables_link">
+                        <i class="far fa-user icon-ver"></i>
+                        <span style="padding-left:6px;">Tables</span>
+                    </a>
+                </li>
                 <li>
                     <a href="clients.php" class="a-verMenu clients_link">
                         <i class="far fa-address-card icon-ver"></i>

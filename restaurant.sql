@@ -116,18 +116,21 @@ CREATE TABLE `reservations` (
 
 --
 -- Table structure for table `tables`
---
 
 CREATE TABLE `tables` (
-  `table_id` int(3) NOT NULL
+  `table_id` int(3) NOT NULL AUTO_INCREMENT,
+  `table_number` int(3) NOT NULL,
+  `table_capacity` int(2) NOT NULL,
+  PRIMARY KEY (`table_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
 -- Dumping data for table `tables`
---
-
-INSERT INTO `tables` (`table_id`) VALUES
-(1);
+INSERT INTO `tables` (`table_id`, `table_number`, `table_capacity`) VALUES
+(1, 101, 2), 
+(2, 102, 4), 
+(3, 103, 6), 
+(4, 104, 3), 
+(5, 105, 2);
 
 -- --------------------------------------------------------
 
