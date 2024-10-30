@@ -13,7 +13,7 @@
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user"></i>
-                            <span class="username">Lock and Key</span>
+                            <span class="username">User</span>
                             <b class="caret"></b>
                         </a>
                         <!-- DROPDOWN MENU -->

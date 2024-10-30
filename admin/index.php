@@ -84,11 +84,7 @@
 			<p>
 				<button type="submit" name="admin_login" >Sign In</button>
 			</p>
-
-			<!-- FORGOT PASSWORD PART -->
-
-			<span class="forgotPW">Forgot your password ? <a href="#">Reset it here.</a></span>
-
+			
 		</form>
 	</div>
 
