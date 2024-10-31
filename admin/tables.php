@@ -10,7 +10,6 @@
   		include 'Includes/functions/functions.php'; 
 		include 'Includes/templates/header.php';
 		include 'Includes/templates/navbar.php';
-
         ?>
 
             <script type="text/javascript">
